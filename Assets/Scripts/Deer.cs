@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class Deer : Animal
 {
-
-    // Update is called once per frame
-    void Update()
+    protected override void Start() // assign name on startup
     {
-        
+        base.Start();
+        animalName = "Deer~";
+    }
+
+    public override void OnMouseOver() // right-click, change chosenAnimal index
+    {
+        base.OnMouseOver();
+        if (Input.GetMouseButtonDown(1))
+        {
+            mainUIManager.chosenAnimal = 0;
+        }
     }
 }

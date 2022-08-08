@@ -4,18 +4,13 @@ using UnityEngine;
 
 public class MoveCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    float cameraSpeed = 10;
 
-    // Update is called once per frame
-    void Update()
+    void Update() // move camera with arrow keys
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector3 input = new Vector3(horizontal, 0, vertical);
-        transform.Translate(input, Space.World);
+        transform.Translate(input * Time.deltaTime * cameraSpeed, Space.World);
     }
 }
