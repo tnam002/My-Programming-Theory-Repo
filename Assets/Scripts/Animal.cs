@@ -16,7 +16,7 @@ public class Animal : MonoBehaviour
     protected float jumpForce = 200; // base jump power for animal
 
     string m_animalName; // member animal name
-    public string animalName // encapsulation to reject really long names
+    public string animalName // ENCAPSULATION
     {
         get
         {
@@ -43,7 +43,7 @@ public class Animal : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // left-click, animal jumps
         {
-            Jump(); // abstraction
+            Jump(); // ABSTRACTION
         } else if (Input.GetMouseButtonDown(1)) // right-click, open input field. child changes chosenAnimal index
         {
             mainUIManager.OpenInputField();
@@ -60,7 +60,7 @@ public class Animal : MonoBehaviour
         HideAnimalName();
     }
 
-    virtual protected void Jump()
+    virtual protected void Jump() // ABSTRACTION
     {
         animalRigidBody.AddForce(Vector3.up * jumpForce, ForceMode.Force);
     }

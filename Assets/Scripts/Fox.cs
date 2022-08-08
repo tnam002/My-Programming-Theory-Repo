@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fox : Animal
+public class Fox : Animal // INHERITANCE
 {
     protected override void Start() // assign name on startup
     {
@@ -10,7 +10,7 @@ public class Fox : Animal
         animalName = "Fox!";
     }
 
-    protected override void Jump() // Polymorphism, fox does a double jump
+    protected override void Jump() // POLYMORPHISM
     {
         base.Jump();
         base.Jump();
